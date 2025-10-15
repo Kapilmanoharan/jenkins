@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Setup') {
+            steps {
+                echo 'Setting up environment...'
+                sh 'python3 --version'
+            }
+        }
+
+        stage('Run Hospital System') {
+            steps {
+                echo 'Running hospital management system...'
+                sh 'python3 hospital.py'
+            }
+        }
+    }
+}
